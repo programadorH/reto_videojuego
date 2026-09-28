@@ -45,6 +45,7 @@ SELECT
 FROM venta v
 
 INNER JOIN cliente c
+
     ON v.id_cliente = c.id_cliente;
 
 --🎮 9.¿Qué producto aparece en cada detalle de venta?
@@ -56,6 +57,7 @@ SELECT
 FROM venta_producto vp
 
 INNER JOIN producto p
+
     ON vp.id_producto = p.id_producto;
 
 --🔥10. Muestre cliente, producto, categoría, cantidad y subtotal de cada venta.
@@ -77,13 +79,18 @@ SELECT
 FROM venta_producto vp
 
 INNER JOIN venta v 
+
   ON vp.id_venta = v.id_venta  
 
 INNER JOIN cliente c
+
   ON v.id_cliente = c.id_cliente
 
 INNER JOIN producto p
+
   ON vp.id_producto = p.id_producto
 
 INNER JOIN categoria ctg
+
   ON  p.id_categoria = ctg.id_categoria;
+
